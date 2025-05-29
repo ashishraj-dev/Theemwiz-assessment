@@ -1,0 +1,1832 @@
+/* Reset default browser styles and set box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set global font family for the body */
+body {
+  font-family: 'Epilogue', sans-serif;
+}
+
+/* Width, height, background color for home page section */
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #28293e;
+  padding-bottom: 50px;
+}
+
+/* Centers content with max width and responsive padding */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(1rem, 1vw, 180px);
+}
+
+/* Navigation style dimension and spacing */
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Flex container for logo: aligns SVG and text horizontally */
+header .logo-container {
+  display: flex;
+  gap: 15px; /* Space between logo SVG and text */
+  align-items: center;
+}
+
+/* Style the logo text */
+header .logo-container h4 {
+  font-weight: 700;
+  color: #fff; /* White text color */
+  align-self: center; /* Vertically center text inside flex container */
+}
+
+/* Initially keeping hamburger menu hidden */
+header .hamburger-menu {
+  display: none;
+}
+
+/* Flex container for navigation: aligns nav items and centers them vertically */
+header .nav-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Display list items horizontally */
+header ul {
+  display: flex;
+  color: #fff;
+  gap: 4vw;
+  align-items: center;
+  font-weight: 400;
+}
+
+/* Remove default list styles from list items */
+header ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Responsive nav links gap on large screen */
+@media (max-width: 1130px) {
+  header ul {
+    gap: 3vw;
+  }
+}
+
+/* Media query for screens up to 980px */
+@media (max-width: 980px) {
+  /* Removes inline padding from main wrapper */
+  main .main-wrapper {
+    padding-inline: unset;
+  }
+
+  /* Adds padding to header */
+  header {
+    padding: 2px 20px;
+  }
+
+  /* Hides navigation links and contact button */
+  header .nav-container,
+  header .nav-contact-btn-container button {
+    display: none;
+  }
+
+  /* Shows hamburger menu, positioned top-right */
+  header .hamburger-menu {
+    position: absolute;
+    display: flex;
+    top: 15px;
+    right: 20px;
+  }
+
+  /* Herosection padding fix and flex direction to column for responsiveness  */
+  main .hero-section {
+    padding-top: 0;
+    flex-direction: column-reverse;
+  }
+
+  /* Herosection description padding fix for responsiveness  */
+  main .hero-section-desc {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* full width for image container of herosection */
+  main .hero-section-image {
+    width: 100%;
+    height: 500px;
+  }
+
+  /* unsetting the object-position and fixing padding for image of herosection for responsiveness*/
+  main .hero-section-image img {
+    object-position: unset;
+    padding: 0 20px;
+  }
+
+  /* changing font and text spacing properties of description heading for responsiveness  */
+  main .hero-section-desc-heading {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 64px;
+  }
+
+  /* hiding star icon  */
+  main .hero-section-desc-star {
+    display: none;
+  }
+
+  /* adding top margin to meta review  */
+  main .hero-section-desc-meta-review {
+    margin-top: 50px;
+  }
+
+  /* increasing line height to meta review content  */
+  main .hero-section-desc-review-content {
+    line-height: 2;
+  }
+
+  /* changing about box direction from row to column on responsiveness */
+  article .about-box {
+    flex-direction: column;
+  }
+
+  /* changing space-between to space-evenly on responsiveness */
+  article .featured-companies {
+    justify-content: space-evenly !important;
+  }
+
+  /* changing width size of about image container on responsiveness */
+  article .about-image-container {
+    width: 100%;
+  }
+
+  /* changing width size of about description container on responsiveness */
+  article .about-desc-container {
+    width: 100%;
+    padding-inline: 20px;
+    margin-top: 15px;
+  }
+
+  /* changing width size and unsetting image position of about image on responsiveness */
+  article .about-image-container img {
+    object-position: unset;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  /* Reduces about heading size and line height */
+  article .about-desc-heading {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  /* Removes right margin from about summary */
+  article .about-desc-summary {
+    margin-right: unset;
+  }
+
+  /* Adjusts statistics section width, margins, and padding */
+  article .about-statistics {
+    width: 90%;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  /* Makes statistics boxes full width */
+  article .about-statistics-box {
+    width: 100%;
+  }
+
+  /* Stacks about work section vertically */
+  article .about-work {
+    flex-direction: column;
+  }
+
+  /* Sets full width and responsive padding for work containers */
+  article .about-work-left-container,
+  article .about-work-right-container {
+    width: 100%;
+    padding-inline: clamp(1rem, 5vw, 180px) clamp(1rem, 5vw, 80px);
+  }
+
+  /* Stacks video reel section vertically */
+  article .about-video-reel {
+    flex-direction: column;
+  }
+
+  /* Sets full width for video reel containers */
+  article .about-video-reel-left-container,
+  article .about-video-reel-right-container {
+    width: 100%;
+  }
+
+  /* Adjusts video reel image container padding and margin */
+  article .about-video-reel-left-container {
+    width: 100%;
+    padding: 30px;
+    margin-top: 40px;
+  }
+
+  /* Makes video reel image full width */
+  article .about-video-reel-left-container img {
+    width: 100%;
+  }
+
+  /* Adjusts video reel text container padding and alignment */
+  article .about-video-reel-right-container {
+    padding-top: 0;
+    padding-bottom: 20px;
+    padding-inline: 30px;
+    justify-content: unset;
+  }
+
+  /* Reduces portfolio headlines heading size and removes letter spacing */
+  article .portfolio-work-headlines-heading {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0;
+  }
+
+  /* Switches portfolio grid to single column with top padding */
+  article .grid-container {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+
+  /* Aligns portfolio images to the left */
+  article .img-wrapper img {
+    object-position: left;
+  }
+
+  /* Repositions portfolio category buttons */
+  article .grid-button-category {
+    bottom: 40px;
+    left: 30px;
+  }
+
+  /* Adjusts grid item row spans for single-column layout */
+  article .grid-item-1 {
+    grid-row: 1 / span 2;
+  }
+  article .grid-item-2 {
+    grid-row: 3 / span 2;
+  }
+  article .grid-item-3 {
+    grid-row: 5 / span 2;
+  }
+  article .grid-item-4 {
+    grid-row: 7 / span 2;
+    display: none; /* Hides fourth item */
+  }
+
+  /* Resets grid column positions */
+  article .grid-item-1,
+  article .grid-item-2,
+  article .grid-item-3,
+  article .grid-item-4 {
+    grid-column: 1;
+  }
+
+  /* Reduces top margin for portfolio explore button */
+  article .portfolio-explore-btn {
+    margin-top: 30px;
+  }
+
+  /* Adjusts portfolio contact section height and margin */
+  article .portfolio-contact-us {
+    height: max-content;
+    margin-top: 100px;
+  }
+
+  /* Repositions person image in portfolio contact section */
+  article .portfolio-contact-us .person-container {
+    position: static;
+    text-align: center;
+  }
+
+  /* Adds responsive padding to portfolio team header */
+  article .portfolio-team-header {
+    padding-inline: clamp(1rem, 3vw, 180px) clamp(1rem, 3vw, 80px);
+  }
+
+  /* Removes right padding from team heading */
+  article .portfolio-team-heading {
+    padding-right: 0;
+  }
+
+  /* Hides team carousel navigation arrows and mobile slider dots */
+  article .portfolio-team-heading svg,
+  article .portfolio-image-slider-dots {
+    display: none;
+  }
+
+  /* Shows desktop slider dots for team carousel */
+  article .portfolio-image-slider-dots-2 {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  /* Stacks pricing cards vertically */
+  article .pricing-cards-container {
+    flex-direction: column;
+  }
+
+  /* Reduces padding for pricing cards */
+  article .pricing-cards {
+    padding: 25px;
+  }
+
+  /* Resets scaling and positioning for middle pricing card */
+  article .pricing-cards:nth-child(2) {
+    transform: unset;
+    transform-origin: unset;
+    position: unset;
+    padding: 25px;
+  }
+
+  /* Resets inner content scaling for middle pricing card */
+  article .pricing-cards:nth-child(2) .card-inner {
+    transform: unset;
+  }
+
+  /* Adjusts margins for popular button in pricing card */
+  article .popular-btn {
+    margin-bottom: 25px;
+  }
+}
+
+/* Media query for screens up to 780px */
+@media (max-width: 780px) {
+  /* Stacks statistics boxes vertically */
+  article .about-statistics {
+    flex-direction: column;
+  }
+
+  /* Adjusts border and radius for first statistics box */
+  article .about-statistics-box:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 5px;
+    border-bottom: unset;
+    border-right: 1px solid #f3d1bf;
+  }
+
+  /* Adjusts border and radius for last statistics box */
+  article .about-statistics-box:last-child {
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: unset;
+    border-left: 1px solid #f3d1bf;
+  }
+}
+
+/* Media query for screens 981px and above */
+@media (min-width: 981px) {
+  /* Makes about image full width */
+  article .about-image-container img {
+    width: 100%;
+  }
+}
+
+/* Media query for screens between 981px and 1160px */
+@media (min-width: 981px) and (max-width: 1160px) {
+  /* Adjusts padding for about description container */
+  article .about-desc-container {
+    padding-left: 50px;
+    padding-right: 30px;
+  }
+}
+
+/* Media query for screens between 1160px and 1345px */
+@media (min-width: 1160px) and (max-width: 1345px) {
+  /* Repositions person image in portfolio contact section */
+  article .portfolio-contact-us .person-container {
+    right: 30px;
+  }
+
+  /* Reduces gap in portfolio contact section */
+  article .portfolio-contact-us {
+    gap: 30px;
+  }
+}
+
+/* Media query for screens up to 1160px */
+@media (max-width: 1160px) {
+  /* Stacks portfolio contact section vertically with adjusted padding */
+  article .portfolio-contact-us {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 25px 0 25px;
+    width: 90%;
+  }
+
+  /* Repositions star image in portfolio contact section */
+  article .portfolio-contact-us .star-container {
+    left: 10px;
+  }
+
+  /* Makes get started section full width */
+  article .portfolio-get-started {
+    width: 100%;
+  }
+
+  /* Stacks FAQ section vertically with responsive padding */
+  .pricing-faq-container .faq-container {
+    flex-direction: column;
+    padding-inline: clamp(1rem, 1vw, 180px) clamp(1rem, 1vw, 80px);
+  }
+
+  /* Makes FAQ description and accordion full width */
+  .pricing-faq-container .faq-desc-container,
+  .pricing-faq-container .faq-accordion {
+    width: 100%;
+  }
+
+  /* Adjusts padding for FAQ accordion */
+  .pricing-faq-container .faq-accordion {
+    padding: 0;
+    padding-top: 40px;
+  }
+
+  /* Reduces bottom padding for pricing container */
+  .pricing-faq-container .pricing-container {
+    padding-bottom: 100px;
+  }
+}
+
+/* Media query for screens up to 1250px */
+@media (max-width: 1250px) {
+  /* Adds responsive padding to portfolio team carousel */
+  .portfolio-team-carousel-wrapper {
+    padding-inline: clamp(1rem, 1vw, 180px) clamp(1rem, 1vw, 80px);
+  }
+
+  /* Adds responsive padding to pricing container */
+  .pricing-container {
+    padding-inline: clamp(1rem, 3vw, 180px);
+  }
+
+  /* Adds responsive padding to FAQ container */
+  .pricing-faq-container .faq-container {
+    padding-inline: clamp(1rem, 2vw, 180px);
+  }
+}
+
+/* Media query for screens up to 512px */
+@media (max-width: 512px) {
+  /* Sets hero section image container height to full */
+  main .hero-section-image {
+    height: 100%;
+  }
+
+  /* Sets about image container height to auto */
+  article .about-image-container {
+    height: auto;
+  }
+
+  /* Makes portfolio get started image wrapper full width */
+  article .portfolio-get-started-img-wrapper {
+    width: 100%;
+  }
+
+  /* Makes person image in portfolio contact section full width */
+  article .person-container img {
+    width: 100%;
+  }
+
+  /* Reduces gap between FAQ accordion list items */
+  .pricing-faq-container .faq-accordion-boxes ul {
+    gap: 10px;
+  }
+}
+
+/* Media query for screens up to 768px */
+@media (max-width: 768px) {
+  /* Hides portfolio work categories */
+  article .portfolio-work-categories {
+    display: none;
+  }
+
+  /* Shows dropdown container, centered with padding */
+  article .dropdown-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-inline: 15px;
+  }
+
+  /* Adjusts form container for mobile, full width with centered alignment */
+  footer .form-container {
+    width: calc(100vw - 8%);
+    max-width: 400px;
+    position: static;
+    padding: 20px 10px;
+    margin: 0 auto;
+    transform: unset;
+    margin-bottom: 50px;
+  }
+
+  /* Repositions map pinpoint marker */
+  footer .map-pinpoint-marker {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+  }
+
+  /* Stacks footer links vertically with centered alignment and gap */
+  footer .footer-links {
+    gap: 50px;
+    padding-inline: clamp(1rem, 2vw, 180px);
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Centers footer menu and service list items */
+  footer .footer-menu ul,
+  footer .footer-service ul {
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Centers footer link headings */
+  footer .footer-links h5 {
+    text-align: center;
+  }
+
+  /* Stacks footer copyright and policies vertically */
+  footer .footer-copyright-policies {
+    flex-direction: column;
+  }
+
+  /* Centers footer copyright text */
+  footer .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centers copyright and policies containers */
+  footer .footer-copyright-container,
+  footer .footer-policies-container {
+    justify-content: center;
+  }
+
+  /* Adjusts footer policies gap and removes right margin */
+  footer .footer-policies {
+    margin-right: 0;
+    gap: 40px;
+  }
+}
+
+/* Flex container for navigation contact button: centers contact button vertically */
+header .nav-contact-btn-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling the navigation contact button: added padding, text converts to uppercase, font weight bold */
+header .nav-contact-btn-container button,
+article .portfolio-explore-btn button {
+  padding: 14px 25px 10px 25px;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 900;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #65688ac0;
+}
+
+/* display, width and padding space style for herosection  */
+.hero-section {
+  display: flex;
+  width: 100%;
+  /* height: 100vh; */
+  padding-top: 100px;
+}
+
+/* width and padding for description part of herosection */
+.hero-section-desc {
+  width: 50%;
+  padding-right: 30px;
+  position: relative;
+}
+
+/* width, height and overflow for image part of herosection */
+.hero-section-image {
+  width: 50%;
+  height: 550px;
+  overflow: hidden;
+}
+
+/* style to properly fit the image of herosection */
+.hero-section-image img {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px 0 50px;
+  object-fit: contain;
+  object-position: left;
+}
+
+/* style for positioning and properties of herosection, about description, about-work, about-video-reel, portfolio, pricing and footer label */
+.hero-section-desc-label,
+.about-desc-label,
+.about-work-label,
+.about-video-reel-label,
+.portfolio-work-headlines-label,
+.portfolio-get-started-label,
+.portfolio-team-label,
+.pricing-header-label,
+.pricing-cards-label,
+.faq-desc-label,
+.footer-menu-label,
+.footer-service-label {
+  font-weight: 400;
+  color: #ef6d58;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+
+/* style for positioning and properties of description heading */
+.hero-section-desc-heading {
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  font-size: 72px;
+  line-height: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+/* style for positioning of description star icon */
+.hero-section-desc-star {
+  position: absolute;
+  top: 18px;
+  right: 110px;
+  z-index: 0;
+}
+
+/* style for color of description summary */
+.hero-section-desc-summary {
+  color: #b1b2b9;
+}
+
+/* style for positioning and properties of description, about-work and about-video-reel summary */
+.hero-section-desc-summary,
+.about-work-summary,
+.about-video-reel-summary,
+.pricing-cards-summary {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+/* style for positioning and spacing of description link */
+.hero-section-desc-link {
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+/* style for positioning, colors, text properties of description button */
+.hero-section-desc-link button,
+.portfolio-get-started button,
+.pricing-contact-link2 button,
+.form-submit-btn button {
+  padding: 15px 20px 12px 20px;
+  border-radius: 5px;
+  background-color: #ef6d58;
+  color: #fff;
+  border: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* style for positioning, colors, and removing underline of description, work and pricing link */
+.contact-us-link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* style for positioning and spacing of meta review container */
+.hero-section-desc-meta-review {
+  margin-top: 100px;
+  display: flex;
+  gap: 20px;
+}
+
+/* style for positioning, color and spacing of meta review image */
+.hero-section-desc-meta-review img {
+  background-color: #b550f6;
+  border-radius: 50%;
+  padding: 5px 5px 0 5px;
+  object-fit: contain;
+}
+
+/* style for positioning of meta review content */
+.hero-section-desc-review-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-section-desc-review-content p:first-child {
+  color: #b1b2b9;
+}
+
+.hero-section-desc-review-content p:last-child {
+  color: #fff;
+}
+
+/* style for size and color of about container */
+.about-container {
+  width: 100%;
+  background-color: #fdf0e9;
+}
+
+/* style for size, positioning and spacing of featured companies */
+.about-container .featured-companies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* style for image fitting and spacing of featured companies images */
+.about-container .featured-companies img {
+  object-fit: contain;
+  padding: 0 5px;
+}
+
+/* style for divider line in about container */
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #f3d1bf;
+  margin-bottom: 20px;
+  display: flex;
+  margin: auto;
+}
+
+/* style for positioning, size and color of about box */
+.about-box {
+  margin-top: 60px;
+  background-color: #fdf0e9;
+  width: 100%;
+  display: flex;
+  padding-bottom: 60px;
+}
+
+/* style for positioning and size of about image container */
+.about-image-container {
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* style for positioning and size of about image */
+.about-image-container img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right;
+  padding-right: 40px;
+}
+
+/* style for size and spacing of about description container */
+.about-desc-container {
+  width: 50%;
+  margin-top: 60px;
+  padding-left: 70px;
+}
+
+/* Style for bold, large headings for about and pricing sections */
+.about-desc-heading,
+.pricing-heading {
+  font-weight: 800;
+  color: #391400;
+  letter-spacing: -1px;
+  font-size: 56px;
+  line-height: 64px;
+}
+
+/* Styles summary heading of About section's description with top margin */
+.about-desc-summary-heading {
+  margin-top: 25px;
+  color: #391400;
+}
+
+/* Styles about description, FAQ description summary and footer section text and footer elements */
+.about-desc-summary,
+.faq-desc-summary,
+.footer-copyright,
+.footer-policies {
+  color: #391400a3;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  margin-right: 30px;
+}
+
+/* Adds top margin to about description link container */
+.about-desc-link {
+  margin-top: 30px;
+}
+
+/* Styles buttons in about and pricing sections */
+.about-desc-link button,
+.pricing-contact-link button {
+  background-color: #ffffff;
+  color: #391400;
+  padding: 15px 25px 12px 25px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 0px rgba(188, 150, 110, 0.39);
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(188, 150, 110, 0.39);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(188, 150, 110, 0.39);
+}
+
+/* Flexbox layout for statistics with centered content and padding */
+.about-statistics {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-block: 80px;
+}
+
+/* Divides statistics boxes into thirds with border and padding */
+.about-statistics-box {
+  width: calc(100% / 3);
+  padding: 35px 0 35px 40px;
+  border: 1px solid #f3d1bf;
+}
+
+/* Rounds corners of the first statistics box */
+.about-statistics-box:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 0;
+}
+
+/* Rounds corners of the last statistics box */
+.about-statistics-box:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 0;
+}
+
+/* Bold, large font for statistics headings */
+.about-statistics-box h3 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+/* Flexbox layout for about work section with full width and padding */
+.about-work {
+  margin-top: 30px;
+  background-color: #fdf0e9;
+  width: 100%;
+  display: flex;
+  padding-bottom: 60px;
+}
+
+/* Centers content in about wrapper with max width */
+.about-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sets half width and responsive padding for work left container */
+.about-work-left-container {
+  width: 50%;
+  padding-inline: clamp(1rem, 3vw, 180px) clamp(1rem, 5vw, 80px);
+}
+
+/* Bold, large headings and color for work and pricing cards */
+.about-work-heading,
+.pricing-cards-price {
+  font-weight: 800;
+  color: #391400;
+  letter-spacing: 0px;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+/* adding top margin and color for work and video reel summaries */
+.about-work-summary,
+.about-video-reel-summary {
+  margin-top: 20px;
+  color: #391400a3;
+}
+
+/* Adds top margin to work link container */
+.about-work-link {
+  margin-top: 30px;
+}
+
+/* Styles work link with brown color and no underline */
+.about-work-link a {
+  text-decoration: none;
+  color: #391400;
+}
+
+/* Flexbox column layout for work steps with half width and padding */
+.about-work-right-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-block: 50px;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+/* Flexbox layout for individual work steps with gap */
+.about-work-steps {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Flexbox layout for individual work steps with gap */
+.about-work-steps h1 {
+  font-weight: 800;
+  color: #391400;
+  letter-spacing: -2px;
+  font-size: 72px;
+  line-height: 80px;
+}
+
+/* Bold headings for work steps */
+.about-work-steps h4 {
+  font-weight: 700;
+  color: #391400;
+  letter-spacing: 0px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+/* Adds left margin to first work step heading */
+.about-work-right-container .about-work-steps:first-child h4 {
+  margin-left: 12px;
+}
+
+/* Flexbox layout for video reel section with full width */
+.about-video-reel {
+  width: 100%;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+/* Centers video reel image in half-width container */
+.about-video-reel-left-container {
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0 50px 50px;
+  margin-top: 60px;
+}
+
+/* Fits video reel image to container */
+.about-video-reel-left-container img {
+  width: 85%;
+  height: 100%;
+  object-fit: contain;
+  inline-size: 100%;
+}
+
+/* Centers video reel text in half-width container with padding */
+.about-video-reel-right-container {
+  width: 50%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-inline: clamp(1rem, 2vw, 180px) clamp(1rem, 5vw, 80px); */
+  padding-left: 100px;
+  padding-right: 60px;
+}
+
+/* Bold, large heading for video reel */
+.about-video-reel-heading {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0;
+  color: #391400;
+}
+
+/* Full-width portfolio section with dark background and padding */
+.portfolio-container {
+  padding-top: 80px;
+  width: 100%;
+  background-color: #28293e;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+/* Centers portfolio headlines with column layout and gap */
+.portfolio-work-headlines {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Large, bold white heading for portfolio */
+.portfolio-work-headlines-heading {
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+/* Flexbox layout for portfolio categories with gap */
+.portfolio-work-categories {
+  display: flex;
+  margin-top: 10px;
+  gap: 40px;
+}
+
+/* Styles portfolio category text with semi-transparent white color */
+.portfolio-work-categories p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #ffffffa3;
+}
+
+/* White color for the first portfolio category */
+.portfolio-work-categories p:first-child {
+  color: #fff;
+}
+
+/* Semi-transparent white for superscript in first category */
+.portfolio-work-categories p:first-child sup {
+  color: #ffffffa3;
+}
+
+/* Hides dropdown container by default */
+.dropdown-container {
+  width: 100%;
+  margin-top: 20px;
+  padding-inline: 50px;
+  display: none;
+}
+
+/* Styles dropdowns with custom arrow */
+#dropdown,
+#dropdown2 {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px 15px; /* Or whatever horizontal padding you prefer */
+  padding-right: 40px;
+  width: 300px;
+  background-color: #ffffff; /* Button-like background */
+  border-radius: 8px; /* Rounded corners like a button */
+  font-weight: 400;
+  font-size: 16px;
+  color: #391400a3;
+  cursor: pointer;
+  outline: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23EF6D58' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 25px 25px;
+  padding-right: 40px;
+}
+
+/* Adds padding and full width to grid parent for portfolio items */
+.grid-parent {
+  padding-inline: 20px;
+  width: 100%;
+}
+
+/* 3-column grid layout for portfolio items with fixed row height */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 12.5rem;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Grid layout for individual portfolio images with shadow */
+.img-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Positions category button and title in portfolio items */
+.grid-button-category {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+}
+
+/* Styles category buttons in portfolio grid */
+.grid-button-category button {
+  border-radius: 20px;
+  border: none;
+  padding: 10px 16px 8px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #391400;
+}
+
+/* Large, bold white titles for portfolio items */
+.grid-button-category h3 {
+  font-weight: 800;
+  font-size: 40px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+/* Fits portfolio images to grid items with rounded corners */
+.img-wrapper img {
+  grid-area: 1 / 1 / -1 / -1;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 8px;
+}
+
+/* Spans first portfolio item across 2 rows in first column */
+.grid-item-1 {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+/* Spans second portfolio item across 2 rows and 2 columns */
+.grid-item-2 {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 2;
+}
+
+/* Spans third portfolio item across 2 rows and 2 columns */
+.grid-item-3 {
+  grid-row: 3 / span 2;
+  grid-column: 1 / span 2;
+}
+
+/* Spans fourth portfolio item across 2 rows in third column */
+.grid-item-4 {
+  grid-row: 3 / span 2;
+  grid-column: 3;
+}
+
+/* Centers explore button for portfolio section */
+.portfolio-explore-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Flexbox layout for portfolio contact section with peach background */
+.portfolio-contact-us {
+  max-width: 1200px;
+  width: 80%;
+  background-color: #fdf0e9;
+  border-radius: 10px;
+  margin-top: 50px;
+  display: flex;
+  padding: 70px 50px 50px 90px;
+  margin: 150px auto 50px auto;
+  gap: 80px;
+  position: relative;
+}
+
+/* Positions star image in portfolio contact section */
+.portfolio-contact-us .star-container {
+  position: absolute;
+  top: -50px;
+  left: 80px;
+}
+
+/* Positions person image in portfolio contact section */
+.portfolio-contact-us .person-container {
+  position: absolute;
+  right: 100px;
+  bottom: -4.5px;
+}
+
+/* Sets width for person image */
+.person-container img {
+  width: 250px;
+}
+
+/* Sets width for star image in get started section */
+.star-container img {
+  width: 100px;
+}
+
+/* Sets width for get started section */
+.portfolio-get-started {
+  width: 25%;
+}
+
+/* Adds bottom margin to get started label */
+.portfolio-get-started-label {
+  margin-bottom: 10px;
+}
+
+/* Bold heading for get started section */
+.portfolio-get-started h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #391400;
+}
+
+/* Adds top margin to get started button */
+.portfolio-get-started button {
+  margin-top: 15px;
+}
+
+/* Sets width for get started image wrapper */
+.portfolio-get-started-img-wrapper {
+  width: 300px;
+}
+
+/* Fits get started image to container */
+.portfolio-get-started-img-wrapper img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Adds padding to portfolio team header */
+.portfolio-team-header {
+  width: 100%;
+  padding-inline: 30px;
+}
+
+/* Centers team header content with max width */
+.portfolio-team-header-wrapper {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Flexbox layout for team heading with spaced elements */
+.portfolio-team-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 80px;
+}
+
+/* Large, bold white heading for team section */
+.portfolio-team-heading-wrapper h2 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+/* Flexbox column layout for team member carousel with overflow hidden */
+.portfolio-team-carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Centers carousel content with max width */
+.portfolio-team-carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+/* Flexbox column layout for team images with gap */
+.portfolio-team-images-container {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+/* Flexbox row layout for team image box with gap */
+.portfolio-image-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+/* Styles team image wrapper with border and rounded corners */
+.portfolio-image-wrapper {
+  width: max-content;
+  border: 1px solid #3a3c56;
+  border-radius: 6px;
+}
+
+/* Bold white heading for team member names */
+.portfolio-image-wrapper h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Semi-transparent white text for team member roles */
+.portfolio-image-wrapper p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #ffffffa3;
+  margin-top: 5px;
+}
+
+/* Fits team member images to fixed dimensions with padding */
+.portfolio-image-wrapper img {
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+  block-size: 100%;
+  inline-size: 100%;
+  padding: 0 10px 0 10px;
+  object-position: bottom;
+}
+
+/* Centers slider dots for team carousel navigation */
+.portfolio-image-slider-dots,
+.portfolio-image-slider-dots-2 {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  place-content: center;
+}
+
+/* Hides desktop slider dots by default */
+.portfolio-image-slider-dots-2 {
+  display: none;
+}
+
+/* Full-width pricing and FAQ section with peach background */
+.pricing-faq-container {
+  width: 100%;
+  background-color: #fdf0e9;
+}
+
+/* Centers pricing content with max width and padding */
+.pricing-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+/* Flexbox column layout for pricing header */
+.pricing-header {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flexbox layout for pricing cards with top margin */
+.pricing-cards-container {
+  width: 100%;
+  display: flex;
+  margin-top: 60px;
+}
+
+/* Styles pricing cards with border, padding, and equal width */
+.pricing-cards {
+  border: 1px solid #f3d1bf;
+  padding: 40px;
+  flex: 1;
+  border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Semi-transparent brown text for pricing card summaries */
+.pricing-cards-summary {
+  color: #391400a3;
+}
+
+/* Flexbox column layout for pricing benefits with gap */
+.pricing-cards-benefits ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Flexbox layout for benefit items with gap */
+.pricing-cards-benefits ul li {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Aligns benefit text with SVG icons */
+.pricing-cards-benefits ul li span {
+  padding-top: 3px;
+}
+
+/* Adds top margin to pricing contact links */
+.pricing-contact-link,
+.pricing-contact-link2 {
+  margin-top: 40px;
+}
+
+/* Semi-transparent brown text for excluded benefits in free plan */
+.benefits-free ul li:nth-child(2) span,
+.benefits-free ul li:last-child span {
+  color: #391400a3;
+}
+
+/* Semi-transparent brown text for excluded benefit in $1500 plan */
+.benefits-1500 ul li:last-child span {
+  color: #391400a3;
+}
+
+/* Adds bottom margin to popular button */
+.popular-btn {
+  margin-bottom: 20px;
+  padding-right: 15px;
+}
+
+/* Styles popular button with orange background and white text */
+.popular-btn button {
+  border-radius: 20px;
+  border: none;
+  padding: 10px 16px 8px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #ef6d58;
+  color: #fff;
+}
+
+/* Scales middle pricing card with white background */
+.pricing-cards:nth-child(2) {
+  background-color: #fff;
+  transform: scaleY(1.1);
+  transform-origin: bottom;
+  position: relative;
+  z-index: 1;
+  padding: 5px 30px 30px 50px;
+  width: 100%;
+}
+
+/* Adjusts inner content of scaled pricing card */
+.pricing-cards:nth-child(2) .card-inner {
+  transform: scaleY(calc(1 / 1.1));
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Flexbox layout for FAQ section with centered content */
+.faq-container {
+  width: 100%;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* Adds right padding to FAQ description container */
+.faq-desc-container {
+  padding-right: 50px;
+}
+
+/* Splits FAQ description and accordion into half-width columns */
+.faq-desc-container,
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/* Bold, large heading for FAQ section */
+.faq-desc-heading {
+  font-weight: 800;
+  color: #391400;
+  letter-spacing: 0px;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+/* Adds padding to FAQ accordion */
+.faq-accordion {
+  padding: 30px;
+}
+
+/* Styles FAQ accordion boxes with border and padding */
+.faq-accordion-boxes {
+  width: 100%;
+  height: auto;
+  padding: 30px 30px 20px 40px;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border: 1px solid #f3d1bf;
+}
+
+/* White background for first FAQ accordion box */
+.faq-accordion-boxes:first-child {
+  background-color: #fff;
+}
+
+/* Styles FAQ contact link with top padding */
+.faq-desc-link .contact-us-link {
+  padding-top: 30px;
+  color: #391400;
+}
+
+/* Flexbox layout for FAQ accordion items with spaced elements */
+.faq-accordion-boxes ul {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Bold text for FAQ accordion items */
+.faq-accordion-boxes ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #391400;
+  padding-bottom: 5px;
+}
+
+/* Bold text for first FAQ accordion item */
+.faq-accordion-boxes:first-of-type ul li {
+  color: #391400;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+/* Semi-transparent brown text for FAQ accordion content */
+.faq-accordion-boxes p {
+  word-spacing: 1px;
+  font-size: 16px;
+  line-height: 32px;
+  color: #391400a3;
+}
+
+/* Full-width footer with peach background and padding */
+.footer-container {
+  width: 100%;
+  background-color: #fdf0e9;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  position: relative;
+}
+
+/* Styles map container with background image and fixed height */
+.map-container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  background-image: url('assets/map.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Styles contact form container with white background and shadow */
+.form-container {
+  width: 400px;
+  position: absolute;
+  top: 14%;
+  left: 5%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Flexbox column layout for contact form with gap */
+.footer-contact-form {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 5px;
+}
+
+/* Styles form inputs and textarea with border and brown text */
+.footer-contact-form input,
+.footer-contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  color: #391400a3;
+  border: 1px solid #f3d1bf;
+  font-family: inherit;
+}
+
+/* Styles textarea with fixed height and vertical resize */
+.footer-contact-form textarea {
+  height: 80px;
+  resize: vertical;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Bold headings for form and footer links */
+.footer-contact-form h4,
+.footer-links h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #391400;
+}
+
+/* Positions map pinpoint marker */
+.map-pinpoint-marker {
+  position: absolute;
+  top: 42%;
+  left: 61%;
+}
+
+/* Aligns form submit button to the right */
+.form-submit-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+/* Styles form subject dropdown with border and brown text */
+#dropdown2 {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #f3d1bf;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 12px;
+  color: #391400a3;
+}
+
+/* Adds top padding to main footer */
+.main-footer {
+  width: 100%;
+  padding-top: 80px;
+  padding-inline: 10px;
+}
+
+/* Flexbox layout for footer links with spaced elements */
+.footer-links {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 80px;
+}
+
+/* Flexbox column layout for footer menu and service lists */
+.footer-menu ul,
+.footer-service ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Brown text for footer links */
+.footer-links li {
+  color: #391400;
+}
+
+/* Fits social media image to fixed width */
+.footer-social img {
+  width: 150px;
+  object-fit: contain;
+}
+
+/* Centers footer line with max width */
+.footer-line-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox layout for footer copyright and policies */
+.footer-copyright-policies {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Flexbox layout for copyright container */
+.footer-copyright-container {
+  width: 100%;
+  display: flex;
+}
+
+/* Aligns policies to the right with gap */
+.footer-policies-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+/* Flexbox layout for policies with gap */
+.footer-policies {
+  display: flex;
+  gap: 80px;
+  color: #391400;
+}
+
+/* Removes right margin from copyright text */
+.footer-copyright {
+  margin-right: 0;
+}
+
+/* Hiding h2 class added for validating */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
