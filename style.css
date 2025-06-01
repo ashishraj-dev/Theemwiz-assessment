@@ -1086,6 +1086,7 @@ article .portfolio-explore-btn button {
 .portfolio-work-categories {
   display: flex;
   margin-top: 10px;
+  margin-bottom: 50px;
   gap: 40px;
 }
 
